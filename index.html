@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <link rel="Stylesheet" type="" href="css/style.css">
+        <title>Naruto: Hangman Revolution</title>
+    </head>
+    <body>
+        <div class="container">
+                <button id="new-btn" onclick="core.init()">New Game</button>
+                <div class="screen">
+                   <p>
+                       <img src="./assets/img/life.png" width="16px" height="16px">: <span id="lives"> 3</span> 
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <img src="./assets/img/scroll.png" width="24px" height="16px">: <span id="word-count"> 0</span>
+                   </p>
+                   <br />
+                   <h3 id="output"></h3>
+                </div>
+                <div class="keyboard">
+                <div class="row">
+                    <button value="a" id="a" onClick="core.crossReference(this)">A</button>
+                    <button value="b" id="b" onClick="core.crossReference(this)">B</button>
+                    <button value="c" id="c" onClick="core.crossReference(this)">C</button>
+                    <button value="d" id="d" onClick="core.crossReference(this)">D</button>
+                    <button value="e" id="e" onClick="core.crossReference(this)">E</button>
+                    <button value="f" id="f" onClick="core.crossReference(this)">F</button>
+                    <button value="g" id="g" onClick="core.crossReference(this)">G</button>
+                    <button value="h" id="h" onClick="core.crossReference(this)">H</button>
+                    <button value="i" id="i" onClick="core.crossReference(this)">I</button>
+                </div>
+                <div class="row row-offset">
+                    <button value="j" id="j" onClick="core.crossReference(this)">J</button>
+                    <button value="k" id="k" onClick="core.crossReference(this)">K</button>
+                    <button value="l" id="l" onClick="core.crossReference(this)">L</button>
+                    <button value="m" id="m" onClick="core.crossReference(this)">M</button>
+                    <button value="n" id="n" onClick="core.crossReference(this)">N</button>
+                    <button value="o" id="o" onClick="core.crossReference(this)">O</button>
+                    <button value="p" id="p" onClick="core.crossReference(this)">P</button>
+                    <button value="q" id="q" onClick="core.crossReference(this)">Q</button>
+                    </div>
+                <div class="row">
+                    <button value="r" id="r" onClick="core.crossReference(this)">R</button>
+                    <button value="s" id="s" onClick="core.crossReference(this)">S</button>
+                    <button value="t" id="t" onClick="core.crossReference(this)">T</button>
+                    <button value="u" id="u" onClick="core.crossReference(this)">U</button>
+                    <button value="v" id="v" onClick="core.crossReference(this)">V</button>
+                    <button value="w" id="w" onClick="core.crossReference(this)">W</button>
+                    <button value="x" id="x" onClick="core.crossReference(this)">X</button>
+                    <button value="y" id="y" onClick="core.crossReference(this)">Y</button>
+                    <button value="z" id="z" onClick="core.crossReference(this)">Z</button>
+                </div>
+                <center><button id="hint-btn" onclick="core.loadHint()"></button></center>
+                </div>
+                <div id="hangman-arena">
+                    <div id="character"></div>
+                    <div id="attack"></div>
+                </div>            
+            </div>
+            <audio id="hint-sound" src="./assets/sounds/mangekyou-sharingan.mp3"></audio>
+            <audio id="wrong-sound" src="./assets/sounds/wrong.mp3"></audio>
+            <audio id="correct-sound" src="./assets/sounds/correct.mp3"></audio>
+    </body>
+</html>
+
+<script src="./core/wordrepository.js"></script>
+<script src="./core/core.js"></script>

@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'naruto-font';
+  src: url('../assets/font/njnaruto.ttf') ;
+}
+
+*{
+    padding: 0;
+    margin:0;
+    font-family:'naruto-font';
+    outline: none;
+}
+.container{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+#new-btn{
+    margin-top: 20px;
+}
+.screen{
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    background-image: url('../assets/img/blank-scroll2.png');
+    background-size: 320px 120px;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.screen p{
+    margin-top: 20px;
+}
+#spacer{
+    width: 100px;
+}
+.row{
+    padding: 5px;
+}
+
+.row-offset{
+    margin-left: 20px;
+}
+
+.row button{
+    width : 40px;
+    height : 40px;
+    border-radius: 50%;
+}
+
+#hint-btn{
+    padding: 5px;
+    width : 70px;
+    height : 70px;
+    border-radius : 50%;
+    background: url('../assets/img/itachi_sharigan2.png') -1px -1px no-repeat;
+}
+
+#hangman-arena{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display : flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#character{
+    width: 70px;
+    height: 90px;
+    background-image: url("../assets/char_sasuke.png");
+    background-size: cover;
+    flex: 1;
+    bottom: 0px;
+    position: absolute;
+}
+
+#attack{
+    flex: 1;
+    bottom: 0px;
+    position: absolute;
+    z-index: 9999;
+}
+
+/***rotate animation****/
+.rotate{
+    -webkit-animation:spin 2s linear forwards;
+    -moz-animation:spin 2s linear forwards;
+    animation:spin 2s linear forwards;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+/**** attack animations *****/
+.attack-stage-1 {
+    width: 70px;
+    height: 20px;
+    background-image: url("../assets/amat_animate_v1.png");
+    animation: attack-stage-1-animation .8s steps(10) infinite;
+}
+
+.attack-stage-2 {
+    width: 50px;
+    height: 30px;
+    background-image: url("../assets/amat_animate_v2.png");
+    animation: attack-stage-2-animation .8s steps(3) infinite;
+}
+
+.attack-stage-3 {
+    width: 60px;
+    height: 60px;
+    background-image: url("../assets/amat_animate_v3.png");
+    animation: attack-stage-3-animation .5s steps(6) infinite;
+}
+
+@keyframes attack-stage-1-animation {
+   from { background-position:    0px; }
+     to { background-position: -500px; }
+}
+@keyframes attack-stage-2-animation {
+   from { background-position:    0px; }
+     to { background-position: -140px; }
+}
+@keyframes attack-stage-3-animation {
+   from { background-position:    0px; }
+     to { background-position: -370px; }
+}
