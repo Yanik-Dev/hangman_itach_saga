@@ -4,8 +4,31 @@
         <title>Naruto: Hangman Revolution</title>
     </head>
     <body>
+        <div id="instructions">
+            <h1 align="center">Instructions</h1>
+            <br />
+            <p>
+                The aim of the game is to guess the word displayed on the scroll. <br />
+                You have three (3) chances to get it right or else your character 
+                burns to death.
+            </p>
+            <br />
+            <ul>
+                <li><img width="32" height="32" src="./assets/img/life.png"> Lives</li>
+                <li><img width="32" height="32" src="./assets/img/scroll.png"> Number of letters in word</li>
+                <li><img width="32" height="32" src="./assets/img/itachi_sharigan.png"> Hint</li>
+                <li><img align="left" width="32" height="52" src="./assets/char_sasuke.png"> <br /> Character</li>
+            </ul>
+        </div>
+        <div id="hint">
+            <br />
+            <p id="hint-p"></p>
+            <br />
+            
+        </div>
         <div class="container">
-                <button id="new-btn" onclick="core.init()">New Game</button>
+                <button id="new-btn" onclick="core.showInstructions()">Instructions</button>
+                <button id="new-btn" onclick="window.location.reload()">New Game</button>
                 <div class="screen">
                    <p>
                        <img src="./assets/img/life.png" width="16px" height="16px">: <span id="lives"> 3</span> 
@@ -58,8 +81,13 @@
             <audio id="hint-sound" src="./assets/sounds/mangekyou-sharingan.mp3"></audio>
             <audio id="wrong-sound" src="./assets/sounds/wrong.mp3"></audio>
             <audio id="correct-sound" src="./assets/sounds/correct.mp3"></audio>
+            <audio id="attack-sound" src="./assets/sounds/amaterasu.mp3"></audio>
     </body>
 </html>
 
 <script src="./core/wordrepository.js"></script>
 <script src="./core/core.js"></script>
+<script>
+    //calls the init method/set up and start the game
+    core.init()
+</script>
